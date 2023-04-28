@@ -11,16 +11,14 @@ public class VardaParadisana : MonoBehaviour {
 
 
 	public string teksts;
-	public double teksts02;
-
+	public int vecums;
 
 	public GameObject ievadesLauks;
-
 	public GameObject tekstaAttelosana;
 
 	public void uzglabaTekstu(){
-
 		teksts = ievadesLauks.GetComponent<Text>().text;
-		tekstaAttelosana.GetComponent<Text> ().text = "Roblox varonis " + teksts.ToUpper () + " ir "+teksts02+" gadus vecs!";
+		int.TryParse(teksts, out vecums);
+		tekstaAttelosana.GetComponent<Text>().text = teksts + " ir " + vecums + " gadus vecs!";
 	}
 }

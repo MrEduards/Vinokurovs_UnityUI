@@ -9,18 +9,23 @@ public class AtteluParadisana : MonoBehaviour {
 	public GameObject Sieviete;
 	public GameObject kurRadit;
 	public Sprite[] koRadit;
-	public GameObject slaideris1;
+
+	public GameObject slaideris;
+	public GameObject slaideris2;
 
 
 	public void VirAttelosana(bool vertiba)
 	{
-		Virietis.SetActive (vertiba);
+		Virietis.SetActive(vertiba);
+		Sieviete.SetActive(!vertiba);
 	}
 
 	public void SievAtteloosana(bool vertiba)
 	{
 		Sieviete.SetActive(vertiba);
+		Virietis.SetActive(!vertiba);
 	}
+
 
 	public void izkritosais(int indekss){
 
@@ -56,11 +61,37 @@ public class AtteluParadisana : MonoBehaviour {
 		
 
 	}
+
+
+
+		
+
+	  
+
+		
+
+
+
+
+	
+	
+
 	public void mainitLielumu(){
-		float pasreizejaVertiba = slaideris1.GetComponent<Slider> ().value;
+		float pasreizejaVertiba = slaideris.GetComponent<Slider> ().value;
 		kurRadit.transform.localScale = 
-			new Vector2 (1f*pasreizejaVertiba, 1f*pasreizejaVertiba);
+			new Vector3 (1f*pasreizejaVertiba, 1f, 1f*pasreizejaVertiba);
 	}
+		public void mainitAugstumu ()
+	{
+		float pasreizejaVertiba = slaideris2.GetComponent<Slider> ().value;
+		kurRadit.transform.localScale = 
+				new Vector3 (1f * pasreizejaVertiba, 2f * pasreizejaVertiba, 1f * pasreizejaVertiba);
 	}
+}
+		
+	
+	
+	
+
 
 
